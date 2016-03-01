@@ -1,0 +1,111 @@
+﻿@model List<Musiq_Library.Models.Artist>
+@{
+    ViewBag.Title = "MusicBrainz";
+    Layout = "~/Views/Shared/_MainPartial.cshtml";
+}
+@{
+    Musiq_Library.DAL.Interface.IMusic _Arstist = new Musiq_Library.DAL.Classes.MusicRepository();
+    List<Musiq_Library.Models.Releases> Releases = new List<Musiq_Library.Models.Releases>();
+    if (Session["SearchArtistID"] != null)
+    {
+        Releases = _Arstist.getWebServiceReleaseInformation(int.Parse(Session["SearchArtistID"].ToString()));
+    }
+}
+<br />
+<div>
+    <form method="get" action="@Url.Action("WebServiceSearchArtist", "Home")">
+        <label for="search">Artist Name :</label>
+        <input type="text" name="search" id="search" class="form-control" />
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+</div>
+<br />
+<div>
+    <table>
+        <tr>
+            <td>
+                @if (Model.Count > 0)
+                {
+                    <label style="font-size:larger">Search Results</label>
+                    <br />
+    <table id="tblResults" cellspacing="1" border="1" style="width:auto" class="table table-striped">
+        <tr>
+            <th>Artist Name</th>
+            <th>Country</th>
+            <th>Aliases</th>
+            <th></th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.Encode(item.ArtistName)
+                </td>
+                <td>
+                    @Html.Encode(item.Country)
+                </td>
+                <td>
+                    @Html.Encode(item.Aliases)
+                </td>
+                <td style="width:auto">
+                    @Html.ActionLink("Show Releases", "ShowRelease", new { id = item.ID })
+                </td>
+            </tr>
+        }
+    </table>
+                }
+                else
+                {
+                    <label> No Search items found</label>
+                }
+            </td>
+        </tr>
+        <tr>
+            @if (Releases.Count > 0)
+            {
+                <td>
+                    <label style="font-size:larger">Releases</label>
+                    <table id="tblShortlist" cellspacing="1" border="1" style="width:auto" class="table table-striped">
+                        <tr>
+                            <th>Year Released</th>
+                            <th>Status</th>
+                            <th>Label</th>
+                            <th>Number Of Tracks</th>
+                            <th>Favourites</th>
+                            <th></th>
+                        </tr>
+                        @foreach (var itm in Releases)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.Encode(itm.YearRelease)
+                                </td>
+                                <td>
+                                    @Html.Encode(itm.Status)
+                                </td>
+                                <td>
+                                    @Html.Encode(itm.Label)
+                                </td>
+                                <td>
+                                    @Html.Encode(itm.NumberOfTracks)
+                                </td>
+                                <td>
+                                    @Html.Encode(itm.bFavourite)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Add Favourite", "AddRemoveReleaseFavourites", new { id = itm.ID, bFavourites = true })
+                                </td>
+                            </tr>
+                        }
+                    </table>
+                </td>
+            }
+            else
+            {
+                <td>
+                    No Release information.
+                </td>
+            }
+        </tr>
+    </table>
+</div>

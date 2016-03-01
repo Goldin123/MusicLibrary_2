@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Bootstrap, a sleek, intuitive, and powerful mobile first front-end framework for faster and easier web development.">
+    <meta name="keywords" content="HTML, CSS, JS, JavaScript, framework, bootstrap, front-end, frontend, web development">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <title>Muisiq Library: @ViewBag.Title</title>
+    <script src="~/Scripts/jquery.menu-aim.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
+</head>    
+<body>
+    <div class="navbar navbar-default navbar-static-top" style="background-color:#f2f2f2">
+        <div class="container">
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="with-menu">@Html.ActionLink("Last FM", "LastFM", "Home")</li>
+                    <li class="with-menu">@Html.ActionLink("MusicBrainz", "Musicbrainz", "Home")</li>
+                    <li class="with-menu">@Html.ActionLink("Favourites", "Favourites", "Home")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+        </footer>
+    </div>       
+</body>
+</html>
+

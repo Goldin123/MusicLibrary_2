@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="getArtistList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getArtistListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getArtistListResult" type="tns:ArrayOfArtists" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfArtists">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Artists" nillable="true" type="tns:Artists" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Artists">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ArtistName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Country" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Aliases" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Favourites" nillable="true" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ShortList" nillable="true" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdateFavouriteReleases">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="bFavourites" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateFavouriteReleasesResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="getArtistReleases">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getArtistReleasesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getArtistReleasesResult" type="tns:ArrayOfReleases" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfReleases">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Releases" nillable="true" type="tns:Releases" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Releases">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Title" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Label" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="NumberOfTracks" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="OtherArtists" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="YearRelease" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="bFavourite" nillable="true" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getFavouriteReleases">
+        <s:complexType />
+      </s:element>
+      <s:element name="getFavouriteReleasesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getFavouriteReleasesResult" type="tns:ArrayOfReleases" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="getArtistListSoapIn">
+    <wsdl:part name="parameters" element="tns:getArtistList" />
+  </wsdl:message>
+  <wsdl:message name="getArtistListSoapOut">
+    <wsdl:part name="parameters" element="tns:getArtistListResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateFavouriteReleasesSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateFavouriteReleases" />
+  </wsdl:message>
+  <wsdl:message name="UpdateFavouriteReleasesSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateFavouriteReleasesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getArtistReleasesSoapIn">
+    <wsdl:part name="parameters" element="tns:getArtistReleases" />
+  </wsdl:message>
+  <wsdl:message name="getArtistReleasesSoapOut">
+    <wsdl:part name="parameters" element="tns:getArtistReleasesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getFavouriteReleasesSoapIn">
+    <wsdl:part name="parameters" element="tns:getFavouriteReleases" />
+  </wsdl:message>
+  <wsdl:message name="getFavouriteReleasesSoapOut">
+    <wsdl:part name="parameters" element="tns:getFavouriteReleasesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="MusicBrainzSoap">
+    <wsdl:operation name="getArtistList">
+      <wsdl:input message="tns:getArtistListSoapIn" />
+      <wsdl:output message="tns:getArtistListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFavouriteReleases">
+      <wsdl:input message="tns:UpdateFavouriteReleasesSoapIn" />
+      <wsdl:output message="tns:UpdateFavouriteReleasesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getArtistReleases">
+      <wsdl:input message="tns:getArtistReleasesSoapIn" />
+      <wsdl:output message="tns:getArtistReleasesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getFavouriteReleases">
+      <wsdl:input message="tns:getFavouriteReleasesSoapIn" />
+      <wsdl:output message="tns:getFavouriteReleasesSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MusicBrainzSoap" type="tns:MusicBrainzSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getArtistList">
+      <soap:operation soapAction="http://tempuri.org/getArtistList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFavouriteReleases">
+      <soap:operation soapAction="http://tempuri.org/UpdateFavouriteReleases" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getArtistReleases">
+      <soap:operation soapAction="http://tempuri.org/getArtistReleases" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFavouriteReleases">
+      <soap:operation soapAction="http://tempuri.org/getFavouriteReleases" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MusicBrainzSoap12" type="tns:MusicBrainzSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getArtistList">
+      <soap12:operation soapAction="http://tempuri.org/getArtistList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFavouriteReleases">
+      <soap12:operation soapAction="http://tempuri.org/UpdateFavouriteReleases" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getArtistReleases">
+      <soap12:operation soapAction="http://tempuri.org/getArtistReleases" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getFavouriteReleases">
+      <soap12:operation soapAction="http://tempuri.org/getFavouriteReleases" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MusicBrainz">
+    <wsdl:port name="MusicBrainzSoap" binding="tns:MusicBrainzSoap">
+      <soap:address location="http://localhost:24719/MusicBrainz.asmx" />
+    </wsdl:port>
+    <wsdl:port name="MusicBrainzSoap12" binding="tns:MusicBrainzSoap12">
+      <soap12:address location="http://localhost:24719/MusicBrainz.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

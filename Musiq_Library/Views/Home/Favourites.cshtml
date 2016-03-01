@@ -1,0 +1,111 @@
+﻿@{
+    ViewBag.Title = "Favourites";
+    Layout = "~/Views/Shared/_MainPartial.cshtml";
+}
+
+@{
+    Musiq_Library.DAL.Interface.IMusic _Artist = new Musiq_Library.DAL.Classes.MusicRepository();
+    List<Musiq_Library.Models.Releases> FavReleases = new List<Musiq_Library.Models.Releases>();
+    List<Musiq_Library.Models.Artist> FavArtists = new List<Musiq_Library.Models.Artist>();
+
+    FavReleases = _Artist.getWebServiceFavouriteReleases();
+    FavArtists = _Artist.getFavouriteArtists();
+
+}
+
+<div>
+    <table>
+        <tr>
+            <td>
+                @if (FavArtists.Count > 0)
+                {
+                    <label style="font-size:larger">Search Results</label>
+                    <br />
+    <table id="tblResults" cellspacing="1" border="1" style="width:auto" class="table table-striped">
+        <tr>
+            <th>Artist Name</th>
+            <th>Country</th>
+            <th>Aliases</th>
+            <th>Favourites</th>
+            <th></th>
+        </tr>
+        @foreach (var item in FavArtists)
+        {
+            <tr>
+                <td>
+                    @Html.Encode(item.ArtistName)
+                </td>
+                <td>
+                    @Html.Encode(item.Country)
+                </td>
+                <td>
+                    @Html.Encode(item.Aliases)
+                </td>
+                <td>
+                    @Html.Encode(item.Favourites)
+                </td>
+                <td style="width:auto">
+                    @Html.ActionLink("Remove Favourite", "AddRemoveToArtistFavourites", new { id = item.ID, bFavourites = false })
+                </td>
+            </tr>
+        }
+    </table>
+                }
+                else
+                {
+                    <label> No favourite artist found</label>
+                }
+            </td>
+
+        </tr>
+
+        <tr>
+            @if (FavReleases.Count > 0)
+            {
+                <td>
+                    <label style="font-size:larger">Releases</label>
+                    <table id="tblShortlist" cellspacing="1" border="1" style="width:auto" class="table table-striped">
+                        <tr>
+                            <th>Year Released</th>
+                            <th>Status</th>
+                            <th>Label</th>
+                            <th>Number Of Tracks</th>
+                            <th>Favourites</th>
+                            <th></th>
+                        </tr>
+                        @foreach (var itm in FavReleases)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.Encode(itm.YearRelease)
+                                </td>
+                                <td>
+                                    @Html.Encode(itm.Status)
+                                </td>
+                                <td>
+                                    @Html.Encode(itm.Label)
+                                </td>
+                                <td>
+                                    @Html.Encode(itm.NumberOfTracks)
+                                </td>
+                                <td>
+                                    @Html.Encode(itm.bFavourite)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Remove Favourite", "AddRemoveReleaseFavourites", new { id = itm.ID, bFavourites = false })
+                                </td>
+                            </tr>
+                        }
+                    </table>
+                </td>
+            }
+            else
+            {
+                <td>
+                    No favourite Release found.
+                </td>
+            }
+        </tr>
+
+    </table>
+</div>

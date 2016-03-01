@@ -1,0 +1,37 @@
+﻿ #loader {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color:rgba(0, 0, 0, 0.35);
+        z-index: 9999;  
+         text-align: center;
+         opacity: 1;
+        position: fixed;
+        height: auto;
+   
+
+    }
+        #loader:before {
+            content: '';
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
+            margin-right: -0.25em;
+        }
+
+    .txt {
+        width: 272px;
+        height: 72px;
+        border: 1px solid #e0e1dd;
+        box-shadow: 0 0 32px 0 rgba(0,0,0,0.75);
+        display: inline-block;
+        vertical-align: middle;
+        padding: 15px 15px;
+        position: relative;
+        font-weight: bold;
+        background-color: white;
+        color: black;
+        top: -350px;
+    }

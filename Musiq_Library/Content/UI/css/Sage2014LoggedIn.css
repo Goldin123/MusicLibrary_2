@@ -1,0 +1,434 @@
+﻿/* === FONTS === */
+@font-face {
+    font-family: foco;
+    src: url('../../UI/fonts/foco/foco-webfont.eot');
+    src: url('../../UI/fonts/foco/foco-webfont.eot?#iefix') format('embedded-opentype'), url('../../UI/fonts/foco/foco-webfont.woff') format('woff'), url('../../UI/fonts/foco/foco-webfont.ttf') format('truetype'), url('../../UI/fonts/foco/foco-webfont.svg#foco-webfont') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: focoBold;
+    src: url('../../UI/fonts/foco/focobold-webfont.eot');
+    src: url('../../UI/fonts/foco/focobold-webfont.eot?#iefix') format('embedded-opentype'), url('../../UI/fonts/foco/focobold-webfont.woff') format('woff'), url('../../UI/fonts/foco/focobold-webfont.ttf') format('truetype'), url('../../UI/fonts/foco/focobold-webfont.svg#focobold-webfont') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.foco {
+    font-family: foco;
+}
+
+.foco_bold {
+    font-family: focoBold;
+}
+
+.arial {
+    font-family: Arial, sans-serif;
+}
+
+/* === Other === */
+body
+{
+    height: 100%;
+}
+html, body, form {
+    /*height: 100%;*/
+    margin: 0px;
+    padding: 0px;
+    /*overflow: hidden;*/
+    font: 15px Arial;
+    color:  #4D4F53;
+}
+
+* {
+    padding: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+}
+.hyperlink
+{
+    color:#41A940 !important;
+}
+.hyperlink:hover
+{
+    color:white !important;
+}
+/*.container
+{
+    max-width: 1000px;
+    min-width: 320px;
+    margin: 0 auto;
+    padding: 0 20px;
+}*/
+.text-strikeout
+{
+    text-decoration-line:line-through;
+    text-decoration:line-through;
+    text-decoration-color:red;
+}
+
+.cf {
+    *zoom: 1
+}
+
+.texthover:hover {
+    text-decoration: underline !important;
+}
+
+.contentarea {
+    width: 1000px;
+    min-width: 1000px;
+    margin: auto;
+    padding: 0px;
+    position: relative;
+}
+
+.contentbackground {
+    background-color: white;
+    position: relative;
+    min-height:600px;
+    padding-top: 20px;
+
+}
+
+.menubackground {
+    background-color: white;
+    position: relative;
+
+}
+
+.contentareabackground{
+    /*z-index: 0;
+    margin:0;
+    padding: 18px 0px 5px 0px;
+    border-top: 1px solid #fff;
+    background: linear-gradient(to bottom, #f2f2f2 0%,#ffffff 100%);
+    background: #fff url("/images/background-gradient-grey.png") 0 0 repeat-x;
+    background: -moz-linear-gradient(top, #f2f2f2 0%, #fff 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f2f2f2), color-stop(100%, #fff));
+    background: -webkit-linear-gradient(top, #f2f2f2 0%, #fff 100%);
+    background: -o-linear-gradient(top, #f2f2f2 0%, #fff 100%);
+    background: -ms-linear-gradient(top, #f2f2f2 0%, #fff 100%);
+
+    position:relative;
+    top: -2px;*/
+    
+}
+
+.menubackground{
+    background-color: white;
+}
+
+.footer1 {
+    background-color: #41A940 !important;
+    color: white !important;
+    width:100%;
+    display: block;
+    font-family: Arial;
+    font-size: 14px;
+    font-weight: bold;
+    height: 113px;
+    line-height: 20px;
+    padding-bottom: 25px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 25px;
+    position: relative;
+}
+.footerSpacingBefore
+{
+    height: 150px;
+}
+.footer1content1
+{
+    float: left;
+    text-align:right;
+    width:30%;
+    position:static;
+}
+
+.bannerbar {
+    background-color: white;
+    height: 100px;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    /*float: right;*/
+    margin-left:auto; 
+    margin-right:0;
+
+}
+
+.sageLogo {
+    content: url('http://zones.sagehrandpayroll.com/content/images/sage_logo.png');
+    padding: 10px;
+    width: 100px;
+    padding-top:15px;
+    height: 47px;
+    position: absolute;
+    background-color: white;
+}
+
+.pad5 {
+    padding: 5px;
+}
+
+.pad10 {
+    padding: 10px;
+}
+
+.vpad10 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    align-content: center;
+}
+
+.hpad10 {
+    padding-left: 10px;
+    padding-right: 10px;
+    align-content: center;
+}
+
+.textwhite {
+    color: white !important;
+}
+.textgrey
+{
+    color:  #4D4F53 !important;
+    text-decoration:none;
+}
+.textbold
+{
+    font-weight:bold;
+}
+.textbold:hover
+{
+    text-decoration:underline !important;
+}
+
+.sagesubheader {
+    font-family: Foco;
+    font-size:21px !important;
+    color: #4D4F53 !important;
+    font-weight: normal !important;
+}
+.sagesubheadergreen
+{
+    font-family:Foco;
+    color: #41A940 !important;
+    font-size:24px;
+    padding-bottom:10px;
+}
+.sagemainheader {
+    color: #4D4F53 !important;
+    font-size: 28px;
+    font-family: Foco;
+}
+
+.captionwidth {
+    width: 175px !important;
+}
+.captionwidthXtended {
+    width: 300px !important;
+}
+.controlwidth
+{
+    width: 250px;
+}
+.controlwidthXtended
+{
+    width: 350px;
+}
+.aspcontrolgenerictheme
+{
+  border:solid 1px #AFAFAF  ;
+  background-color:  transparent;
+  padding:3px;
+  color:  #4D4F53;
+}
+.aspcontrolgenerictheme:focus
+{
+  background-color:  #f3f3f1;
+}
+.aspcontrolgenerictheme[readonly='read-only'],
+.aspcontrolgenerictheme[disabled='disabled']
+{
+  border:solid 1px #AFAFAF  ;
+  background-color:  #E0E1DD;
+  padding:5px;
+  color:  #4D4F53;
+}
+.separatordashes {
+    border-bottom: 1px dashed #9a9b9c !important;
+    padding: 35px 0 !important;
+}
+
+.SageGridHeader ,.SageGridHeader > th {
+    margin: 4px;
+    color: white;
+    text-align: left !important;
+    background-color: #4D4F53;
+    padding: 7px;
+    font-weight: normal !important;
+    border: solid 2px white;
+}
+.SageGridRow > td > a
+{
+    font-weight:bold !important;
+}
+
+.SageGridRow 
+{
+    color: #4D4F53 !important;
+    text-align: left;
+    padding: 5px;
+    border: solid 1px #E0E1DD;
+}
+
+.linedotted
+{
+    border-bottom:2px dotted  #AFAFAF;
+}
+
+#HeaderBarContentArea {
+    width: 1000px;
+}
+
+.menuitems
+{
+    z-index:999;
+}
+
+.containerPanel {
+    border-style: solid;
+    border-color: #E0E1DD;
+    border-width: 1px;
+}
+
+.containerHeader {
+    background-color:  #41A940;
+    margin: 0 0 0 0;
+    padding: 7px;
+    color: white; 
+    height: 16px;
+}
+
+.containerHeader:hover{
+    background-color:  #AFAFAF;
+    color: #4D4F53;
+}
+
+.containerContents{
+    /*visibility:collapse*/;
+    /*height: 200px;*/
+}
+
+div.fillcontents
+{
+    position:relative;
+}
+div.fillcontents a
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    text-decoration: none; /* No underlines on the link */
+    /*z-index: 10;*/ /* Places the link above everything else in the div */
+    background-color: #FFF; /* Fix to make div clickable in IE */
+    opacity: 0; /* Fix to make div clickable in IE */
+    filter: alpha(opacity=1); /* Fix to make div clickable in IE */
+}
+
+/*#Split button UI */
+    .btngreen 
+    {
+        background-color: #41A940 !important;
+        width: auto;
+    }
+    .btngreen:hover
+    {
+        background-color: #E0E1DD !important;
+    }
+    .btngreen-arrow:after {
+        display:inline-block;
+        width: 10px;
+        content: '\003E';
+        color: white;
+        background-color: #41A940;
+        padding: 3px;
+        border-left: 1px solid white;
+    }
+
+/*#endregion */
+
+.socialicons
+{
+    background:url('../../UI/Images/bg_sprite.png') -184px -134px;
+    width:25px;
+    height:25px;
+    padding:5px;
+    overflow:hidden;
+    display:block;
+}
+.facebookicon
+{
+          background-position: 0px -184px;
+}
+.facebookicon:hover
+{
+          background-position: 0px -211px;
+}
+.twittericon
+{
+          background-position: -27px -184px;
+}
+.twittericon:hover
+{
+          background-position: -27px -211px;
+}
+.linkedicon
+{
+          background-position: -53px -184px;
+}
+.linkedicon:hover
+{
+          background-position: -53px -211px;
+}
+.youtubeicon
+{
+          background-position: -81px -184px;
+}
+.youtubeicon:hover
+{
+          background-position: -81px -211px;
+}
+.lightgreyback
+{
+    background-color:#E0E1DD;
+
+}
+.lightergreyback
+{
+    background-color:#f3f3f1;
+
+}
+.noborder
+{
+    border:none;
+}
+.tablepad > tbody > tr > td
+{
+    padding:5px;
+}
+p 
+{
+    line-height:1.7em;
+}

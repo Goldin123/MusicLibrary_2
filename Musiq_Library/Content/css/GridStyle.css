@@ -1,0 +1,16 @@
+﻿body {
+}
+
+.dxgv {
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+    .dxgv:hover {
+        max-width: 100px;
+        overflow: visible;
+        text-overflow: ellipsis;
+        white-space: pre-wrap;
+    }

@@ -1,0 +1,10 @@
+C:\Users\Goldin.Baloyi\Desktop\New folder\Musiq_Library\MusicBrainz\bin\MusicBrainz.dll.config
+C:\Users\Goldin.Baloyi\Desktop\New folder\Musiq_Library\MusicBrainz\bin\MusicBrainz.dll
+C:\Users\Goldin.Baloyi\Desktop\New folder\Musiq_Library\MusicBrainz\bin\MusicBrainz.pdb
+C:\Users\Goldin.Baloyi\Desktop\New folder\Musiq_Library\MusicBrainz\obj\Debug\MusicBrainz.dll
+C:\Users\Goldin.Baloyi\Desktop\New folder\Musiq_Library\MusicBrainz\obj\Debug\MusicBrainz.pdb
+C:\Users\Goldin.Baloyi\Desktop\New folder\Musiq_Library\MusicBrainz\bin\EntityFramework.dll
+C:\Users\Goldin.Baloyi\Desktop\New folder\Musiq_Library\MusicBrainz\bin\EntityFramework.SqlServer.dll
+C:\Users\Goldin.Baloyi\Desktop\New folder\Musiq_Library\MusicBrainz\bin\EntityFramework.xml
+C:\Users\Goldin.Baloyi\Desktop\New folder\Musiq_Library\MusicBrainz\bin\EntityFramework.SqlServer.xml
+C:\Users\Goldin.Baloyi\Desktop\New folder\Musiq_Library\MusicBrainz\obj\Debug\MusicBrainz.csprojResolveAssemblyReference.cache

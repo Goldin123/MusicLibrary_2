@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Musiq_Library", "Musiq_Library\Musiq_Library.csproj", "{B77DE59B-4610-44DD-ABC5-8E326BDC6BEB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{BD038E7D-D7B1-43A1-80DA-A15FBD65DB82} = {BD038E7D-D7B1-43A1-80DA-A15FBD65DB82}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Musiq_Library.Tests", "Musiq_Library.Tests\Musiq_Library.Tests.csproj", "{96FD3288-A01A-4947-B859-129BF08C0993}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicBrainz", "MusicBrainz\MusicBrainz.csproj", "{BD038E7D-D7B1-43A1-80DA-A15FBD65DB82}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B77DE59B-4610-44DD-ABC5-8E326BDC6BEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B77DE59B-4610-44DD-ABC5-8E326BDC6BEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B77DE59B-4610-44DD-ABC5-8E326BDC6BEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B77DE59B-4610-44DD-ABC5-8E326BDC6BEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96FD3288-A01A-4947-B859-129BF08C0993}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96FD3288-A01A-4947-B859-129BF08C0993}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96FD3288-A01A-4947-B859-129BF08C0993}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96FD3288-A01A-4947-B859-129BF08C0993}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD038E7D-D7B1-43A1-80DA-A15FBD65DB82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD038E7D-D7B1-43A1-80DA-A15FBD65DB82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD038E7D-D7B1-43A1-80DA-A15FBD65DB82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD038E7D-D7B1-43A1-80DA-A15FBD65DB82}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

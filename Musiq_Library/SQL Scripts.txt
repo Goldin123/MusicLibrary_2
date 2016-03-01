@@ -1,0 +1,75 @@
+﻿CREATE TABLE [dbo].[Artist]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
+    [GUID] VARCHAR(100) NULL, 
+    [ArtistName] VARCHAR(50) NULL, 
+    [Country] VARCHAR(50) NULL, 
+    [Aliases] VARCHAR(50) NULL, 
+    [Favourites] BIT NULL, 
+    [ShortList] BIT NULL
+);
+
+CREATE TABLE [dbo].[Releases] (
+    [ReleaseID]      INT          IDENTITY (1, 1) NOT NULL,
+    [ArtistID]       INT          NULL,
+    [Title]          VARCHAR (50) NULL,
+    [Status]         VARCHAR (50) NULL,
+    [Label]          VARCHAR (50) NULL,
+    [NumberOfTracks] INT          NULL,
+    [OtherArtists]   VARCHAR (50) NULL,
+    [YearRelease]    VARCHAR (50) NULL,
+    [bFavourites] BIT NULL, 
+    PRIMARY KEY CLUSTERED ([ReleaseID] ASC)
+);
+
+
+
+insert into Artist (ArtistName,GUID,Country,Aliases) values ('Metallica','65f4f0c5-ef9e-490c-aee3-909e7ae6b2ab','US','Metalica,메탈리카');
+insert into Artist (ArtistName,GUID,Country,Aliases) values ('Lady Gaga','650e7db6-b795-4eb5-a702-5ea2fc46c848','US','Lady Ga Ga,Stefani Joanne Angelina Germanotta');
+insert into Artist (ArtistName,GUID,Country,Aliases) values ('Mumford & Sons','c44e9c22-ef82-4a77-9bcd-af6c958446d6','GB','');
+insert into Artist (ArtistName,GUID,Country,Aliases) values ('Mott the Hoople','435f1441-0f43-479d-92db-a506449a686b','GB','Mott The Hoppie,Mott The Hopple');
+insert into Artist (ArtistName,GUID,Country,Aliases) values ('Megadeth','a9044915-8be3-4c7e-b11f-9e2d2ea0a91e','US','Megadeath');
+insert into Artist (ArtistName,GUID,Country,Aliases) values ('John Coltrane','b625448e-bf4a-41c3-a421-72ad46cdb831','US','John Coltraine,John William Coltrane');
+insert into Artist (ArtistName,GUID,Country,Aliases) values ('Mogwai','d700b3f5-45af-4d02-95ed-57d301bda93e','GB','Mogwa');
+insert into Artist (ArtistName,GUID,Country,Aliases) values ('John Mayer','144ef525-85e9-40c3-8335-02c32d0861f3','US','');
+insert into Artist (ArtistName,GUID,Country,Aliases) values ('Johnny Cash','18fa2fd5-3ef2-4496-ba9f-6dae655b2a4f','US','Johhny Cash,Jonny Cash');
+insert into Artist (ArtistName,GUID,Country,Aliases) values ('Jack Johnson','6456a893-c1e9-4e3d-86f7-0008b0a3ac8a','US','Jack Hody Johnson');
+insert into Artist (ArtistName,GUID,Country,Aliases) values ('John Frusciante','f1571db1-c672-4a54-a2cf-aaa329f26f0b','US','John Anthony Frusciante');
+insert into Artist (ArtistName,GUID,Country,Aliases) values ('Elton John','b83bc61f-8451-4a5d-8b8e-7e9ed295e822','GB','E. John, Elthon John,Elton Jphn,John Elton, Reginald Kenneth Dwight');
+insert into Artist (ArtistName,GUID,Country,Aliases) values ('Rancid','24f8d8a5-269b-475c-a1cb-792990b0b2ee','US','ランシド');
+insert into Artist (ArtistName,GUID,Country,Aliases) values ('Transplants','29f3e1bf-aec1-4d0a-9ef3-0cb95e8a3699','US','The Transplants');
+insert into Artist (ArtistName,GUID,Country,Aliases) values ('Operation Ivy','931e1d1f-6b2f-4ff8-9f70-aa537210cd46','US','Op Ivy');
+
+
+insert into Releases (ArtistID,Title,Status,Label,NumberOftracks,OtherArtists,YearRelease) values (1,'Title 1','Status 1','Label 1 ',10,'John Mayor','2009');
+insert into Releases (ArtistID,Title,Status,Label,NumberOftracks,OtherArtists,YearRelease) values (1,'Title 2','Status 2','Label 2',11,'Phil Collins','2010');
+insert into Releases (ArtistID,Title,Status,Label,NumberOftracks,OtherArtists,YearRelease) values (1,'Title 3','Status 3','Label 3',12,'Metalicca','2011');
+insert into Releases (ArtistID,Title,Status,Label,NumberOftracks,OtherArtists,YearRelease) values (1,'Title 4','Status 4','Label 4',13,'U2','2012');
+insert into Releases (ArtistID,Title,Status,Label,NumberOftracks,OtherArtists,YearRelease) values (2,'Title 5','Status 5','Label 5',14,'John Mayor','2013');
+insert into Releases (ArtistID,Title,Status,Label,NumberOftracks,OtherArtists,YearRelease) values (2,'Title 6','Status 6','Label 6',15,'Phil Collins','2014');
+insert into Releases (ArtistID,Title,Status,Label,NumberOftracks,OtherArtists,YearRelease) values (2,'Title 7','Status 7','Label 7',16,'Metalicca','2015');
+insert into Releases (ArtistID,Title,Status,Label,NumberOftracks,OtherArtists,YearRelease) values (2,'Title 8','Status 8','Label 8',17,'U3','2016');
+insert into Releases (ArtistID,Title,Status,Label,NumberOftracks,OtherArtists,YearRelease) values (3,'Title 9','Status 9','Label 9',18,'John Mayor','2017');
+insert into Releases (ArtistID,Title,Status,Label,NumberOftracks,OtherArtists,YearRelease) values (3,'Title 10','Status 10','Label 10',19,'Phil Collins','2018');
+insert into Releases (ArtistID,Title,Status,Label,NumberOftracks,OtherArtists,YearRelease) values (3,'Title 11','Status 11','Label 11',20,'Metalicca','2019');
+insert into Releases (ArtistID,Title,Status,Label,NumberOftracks,OtherArtists,YearRelease) values (3,'Title 12','Status 12','Label 12',21,'U4','2020');
+insert into Releases (ArtistID,Title,Status,Label,NumberOftracks,OtherArtists,YearRelease) values (3,'Title 13','Status 13','Label 13',22,'John Mayor','2021');
+insert into Releases (ArtistID,Title,Status,Label,NumberOftracks,OtherArtists,YearRelease) values (4,'Title 14','Status 14','Label 14',23,'Phil Collins','2022');
+insert into Releases (ArtistID,Title,Status,Label,NumberOftracks,OtherArtists,YearRelease) values (4,'Title 15','Status 15','Label 15',24,'Metalicca','2023');
+insert into Releases (ArtistID,Title,Status,Label,NumberOftracks,OtherArtists,YearRelease) values (4,'Title 16','Status 16','Label 16',25,'U5','2024');
+insert into Releases (ArtistID,Title,Status,Label,NumberOftracks,OtherArtists,YearRelease) values (4,'Title 17','Status 17','Label 17',26,'John Mayor','2025');
+insert into Releases (ArtistID,Title,Status,Label,NumberOftracks,OtherArtists,YearRelease) values (5,'Title 18','Status 18','Label 18',27,'Phil Collins','2026');
+insert into Releases (ArtistID,Title,Status,Label,NumberOftracks,OtherArtists,YearRelease) values (5,'Title 19','Status 19','Label 19',28,'Metalicca','2027');
+insert into Releases (ArtistID,Title,Status,Label,NumberOftracks,OtherArtists,YearRelease) values (5,'Title 20','Status 20','Label 20',29,'U6','2028');
+insert into Releases (ArtistID,Title,Status,Label,NumberOftracks,OtherArtists,YearRelease) values (5,'Title 21','Status 21','Label 21',30,'John Mayor','2029');
+insert into Releases (ArtistID,Title,Status,Label,NumberOftracks,OtherArtists,YearRelease) values (6,'Title 22','Status 22','Label 22',31,'Phil Collins','2030');
+insert into Releases (ArtistID,Title,Status,Label,NumberOftracks,OtherArtists,YearRelease) values (6,'Title 23','Status 23','Label 23',32,'Metalicca','2031');
+insert into Releases (ArtistID,Title,Status,Label,NumberOftracks,OtherArtists,YearRelease) values (6,'Title 24','Status 24','Label 24',33,'U7','2032');
+insert into Releases (ArtistID,Title,Status,Label,NumberOftracks,OtherArtists,YearRelease) values (6,'Title 25','Status 25','Label 25',34,'John Mayor','2033');
+insert into Releases (ArtistID,Title,Status,Label,NumberOftracks,OtherArtists,YearRelease) values (7,'Title 26','Status 26','Label 26',35,'Phil Collins','2034');
+insert into Releases (ArtistID,Title,Status,Label,NumberOftracks,OtherArtists,YearRelease) values (7,'Title 27','Status 27','Label 27',36,'Metalicca','2035');
+insert into Releases (ArtistID,Title,Status,Label,NumberOftracks,OtherArtists,YearRelease) values (7,'Title 28','Status 28','Label 28',37,'U8','2036');
+insert into Releases (ArtistID,Title,Status,Label,NumberOftracks,OtherArtists,YearRelease) values (7,'Title 29','Status 29','Label 29',38,'John Mayor','2037');
+
+update top (10) Releases
+set bFavourites = 1

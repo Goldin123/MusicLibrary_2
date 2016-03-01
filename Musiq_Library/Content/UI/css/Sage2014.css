@@ -1,0 +1,257 @@
+﻿/* === FONTS === */
+@font-face {
+    font-family: foco;
+    src: url('../../UI/fonts/foco/foco-webfont.eot');
+    src: url('../../UI/fonts/foco/foco-webfont.eot?#iefix') format('embedded-opentype'), url('../../UI/fonts/foco/foco-webfont.woff') format('woff'), url('../../UI/fonts/foco/foco-webfont.ttf') format('truetype'), url('../../UI/fonts/foco/foco-webfont.svg#foco-webfont') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: focoBold;
+    src: url('../../UI/fonts/foco/focobold-webfont.eot');
+    src: url('../../UI/fonts/foco/focobold-webfont.eot?#iefix') format('embedded-opentype'), url('../../UI/fonts/foco/focobold-webfont.woff') format('woff'), url('../../UI/fonts/foco/focobold-webfont.ttf') format('truetype'), url('../../UI/fonts/foco/focobold-webfont.svg#focobold-webfont') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.foco {
+    font-family: Foco;
+}
+
+.foco_bold {
+    font-family: focoBold;
+}
+
+.arial {
+    font-family: Arial, sans-serif;
+}
+
+/* === Other === */
+body
+{
+    height: 100%;
+}
+
+html, body, form {
+    /*height: 100%;*/
+    margin: 0px;
+    padding: 0px;
+    /*overflow: hidden;*/
+    font: 15px Arial;
+    color: #4D4F53;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+.cf:before,.cf:after {
+    content: " ";
+    display: table
+}
+
+.cf:after {
+    clear: both
+}
+
+.cf {
+    *zoom: 1
+}
+.htmlmain {
+    /*background-color:white;*/
+}
+
+.texthover:hover {
+    text-decoration: underline !important;
+}
+
+.contentarea {
+    /*width: 1000px;
+    min-width: 1000px;*/
+    /*margin: auto;*/
+    padding: 0px;
+    position: relative;
+    /*box-shadow: 0px 0px 42px #000000;*/
+}
+.fittowidth
+{
+    width:100%;
+}
+#HeaderBarArea {
+    background-color: #E0E1DD;
+    height: 41px;
+    color: #4D4F53 !important;
+}
+
+.footer1 {
+
+    background-color: #41a940;
+    color: #fff;
+    font-weight: bold;
+    font-size: 13px;
+    font-size: 0.875rem;
+    line-height: 20px;
+    line-height: 1.25rem;
+    padding: 25px 0px 25px 0px;
+    position: relative;
+    height:125px;
+}
+
+.bannerbar {
+    height: 100px;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.sageLogo {
+    padding-top: 15px;
+    padding-left: 0px;
+}
+
+.pad5 {
+    padding: 5px;
+}
+
+.pad10 {
+    padding: 10px;
+}
+
+.vpad10 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.hpad10 {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.textwhite {
+    color: white;
+}
+
+.sagesubheader {
+    font-family: foco;
+    font-size: 18px !important;
+    color: #4D4F53 !important;
+    font-weight: 500 !important;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+}
+
+.sagemainheader {
+    color: #007f64 !important;
+    font-family: foco !important;
+}
+.headertextSageGreen
+{
+    color:#41A940 !important;
+    font-family: foco !important;
+}
+.headertextDarkGrey
+{
+    color: #4D4F53 !important;
+    font-family: foco !important;
+}
+
+.captionwidth {
+    width: 175px !important;
+}
+
+.separatordashes {
+    border-bottom: 1px dashed #9a9b9c !important;
+    padding: 20px 0 !important;
+}
+.lightgreyback
+{
+    background-color:#f3f3f1;
+
+}
+.SageGridHeader {
+    margin: 4px;
+    font-size: 12px;
+    color: white !important;
+    text-align: left !important;
+    background-color: #99999d;
+    height: 28px;
+    padding: 10px;
+    font-weight: normal !important;
+}
+
+.SageGridRow {
+    font-size: 12px;
+    color: Black;
+    text-align: left;
+    background-color: white;
+    padding: 5px;
+}
+.captionwidth {
+    width: 175px !important;
+}
+.controlwidth
+{
+    width: 250px;
+}
+.controlwidthXtended
+{
+    width: 350px;
+}
+
+.socialicons
+{
+    background:url('../../UI/Images/bg_sprite.png') -184px -134px;
+    width:25px;
+    height:25px;
+    padding:5px;
+    overflow:hidden;
+    display:block;
+}
+.facebookicon
+{
+          background-position: 0px -184px;
+}
+.facebookicon:hover
+{
+          background-position: 0px -211px;
+}
+.twittericon
+{
+          background-position: -26px -184px;
+}
+.twittericon:hover
+{
+          background-position: -26px -211px;
+}
+.linkedicon
+{
+          background-position: -53px -184px;
+}
+.linkedicon:hover
+{
+          background-position: -53px -211px;
+}
+.youtubeicon
+{
+          background-position: -81px -184px;
+}
+.youtubeicon:hover
+{
+          background-position: -81px -211px;
+}
+.content-wrapper {
+    margin: 0 auto;
+    max-width: 960px;
+}
+#body {
+    background-color: #efeeef;
+    clear: both;
+    padding-bottom: 35px;
+}

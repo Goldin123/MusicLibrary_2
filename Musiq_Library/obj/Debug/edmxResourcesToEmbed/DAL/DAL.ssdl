@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MusicModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Artist">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GUID" Type="varchar(max)" />
+    <Property Name="ArtistName" Type="varchar" MaxLength="500" />
+    <Property Name="Country" Type="varchar" MaxLength="10" />
+    <Property Name="Aliases" Type="varchar(max)" />
+    <Property Name="Favourites" Type="bit" />
+    <Property Name="ShortList" Type="bit" />
+  </EntityType>
+  <EntityType Name="Releases">
+    <Key>
+      <PropertyRef Name="ReleaseID" />
+    </Key>
+    <Property Name="ReleaseID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ArtistID" Type="int" />
+    <Property Name="Title" Type="varchar" MaxLength="50" />
+    <Property Name="Status" Type="varchar" MaxLength="50" />
+    <Property Name="Label" Type="varchar" MaxLength="50" />
+    <Property Name="NumberOfTracks" Type="int" />
+    <Property Name="OtherArtists" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="MusicModelStoreContainer">
+    <EntitySet Name="Artist" EntityType="Self.Artist" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Releases" EntityType="Self.Releases" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

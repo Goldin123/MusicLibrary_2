@@ -1,0 +1,126 @@
+﻿@model List<Musiq_Library.Models.Artist>
+@{
+    ViewBag.Title = "LastFM";
+    Layout = "~/Views/Shared/_MainPartial.cshtml";
+}
+
+@{
+    Musiq_Library.DAL.Interface.IMusic _Arstist = new Musiq_Library.DAL.Classes.MusicRepository();
+    List<Musiq_Library.Models.Artist> Shortlist = new List<Musiq_Library.Models.Artist>();
+    if (Session["SearchArtist"] != null)
+    {
+        Shortlist = _Arstist.getShortListArtist(Session["SearchArtist"].ToString());
+    }
+}
+<br />
+<div class="panel panel-default">
+    <form method="get" action="@Url.Action("SearchArtist", "Home")">
+        <label for="search">Artist Name :</label>
+        <input type="text" name="search" id="search" class="form-control" />
+        <button type="submit" class="btn btn-default">Search</button>
+    </form>
+</div>
+<br />
+<div>
+    <table>
+        <tr>
+            <td>
+                @if (Model.Count > 0)
+                {
+                    <label style="font-size:larger">Search Results</label>
+                    <br />
+    <table id="tblResults" cellspacing="1" border="1" style="width:auto" class="table table-striped">
+        <tr>
+            <th>Artist Name</th>
+            <th>Country</th>
+            <th>Aliases</th>
+            <th></th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.Encode(item.ArtistName)
+                </td>
+                <td>
+                    @Html.Encode(item.Country)
+                </td>
+                <td>
+                    @Html.Encode(item.Aliases)
+                </td>
+                <td style="width:auto">
+                    @if ((bool)(!(item.ShortList ?? false)))
+                    {
+                        @Html.ActionLink("Add to Shortlist", "AddRemoveToArtistShortList", new { id = item.ID, bShortlist = true })
+                    }
+                    else
+                    {
+                        <label>Already shortlisted | </label>
+                        @Html.ActionLink("Remove Shortlist", "AddRemoveToArtistShortList", new { id = item.ID, bShortlist = false })
+                    }
+                </td>
+            </tr>
+        }
+    </table>
+                }
+                else
+                {
+                    <label> No Search items found</label>
+                }
+            </td>
+        </tr>
+        <tr>
+            @if (Shortlist.Count > 0)
+            {
+                <td>
+                    <label style="font-size:larger">Short list</label>
+                    <table id="tblShortlist" cellspacing="1" border="1" style="width:auto" class="table table-striped">
+                        <tr>
+                            <th>Artist Name</th>
+                            <th>Country</th>
+                            <th>Aliases</th>
+                            <th>Favourites</th>
+                            <th></th>
+                        </tr>
+
+                        @foreach (var itm in Shortlist)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.Encode(itm.ArtistName)
+                                </td>
+                                <td>
+                                    @Html.Encode(itm.Country)
+                                </td>
+                                <td>
+                                    @Html.Encode(itm.Aliases)
+                                </td>
+                                <td>
+                                    @Html.Encode(itm.Favourites)
+                                </td>
+                                <td style="width:auto">
+                                    @if ((bool)(!(itm.Favourites ?? false)))
+                                    {
+                                        @Html.ActionLink("Add Favourite", "AddRemoveToArtistFavourites", new { id = itm.ID, bFavourites = true })
+                                    }
+                                    else
+                                    {
+                                        <label>Marked Favourite | </label>
+                                        @Html.ActionLink("Remove Favourite", "AddRemoveToArtistFavourites", new { id = itm.ID, bFavourites = false })
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    </table>
+                </td>
+            }
+            else
+            {
+                <td>
+                    No shortlist items.
+                </td>
+            }
+        </tr>
+    </table>
+    <br />
+</div>
